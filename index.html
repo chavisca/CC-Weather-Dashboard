@@ -18,58 +18,55 @@
     <header class="p-5 mb-4">
       <h1 class="display-3 text-center">Weather Dashboard</h1>
     </header>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-sm">
-                City Search panel
+            <div id="sidesearch" class="col-md-3">
+                <h4 id="searchtitle">Search for a City:</h4>
+                <form>
+                <input id="citysearchtext" class="citysearchtext" type="text"><br><br>
+                <input type="submit" value="Search"><br><hr>
+                </form>
             </div>
-            <div class="col-sm">
-                Search Results
-                <div class="maincard">
-                    <div class="maincard-body">
-                        <h5 class="maincard-title">Current Day Forecast</h5>
-                        <p class="maincard-text">Temp:</p>
-                        <p class="maincard-text">Wind:</p>
-                        <p class="maincard-text">Humidity:</p>
-                    </div>
+        <div id="weatherboxes" class="col-md-9">
+            <div class="row">
+                <div id="maincard-body" class="col-md-9">
+                    <h5 id="maincard-title">Current Day Forecast</h5>
+                    <p id="maincard-text">Temp:</p>
+                    <p id="maincard-text">Wind:</p>
+                    <p id="maincard-text">Humidity:</p>
                 </div>
-                <div class="row">
-                    5 day Forecast
-                    <div class="forecard">Day 1</div>
-                        <div class="forecard-body">
-                            <h5 class="forecard-title">Current Day Forecast</h5>
-                            <p class="forecard-text">Temp:</p>
-                            <p class="forecard-text">Wind:</p>
-                            <p class="forecard-text">Humidity:</p>
-                        </div>
-                    <div class="forecard">Day 2</div>
-                        <div class="forecard-body">
-                            <h5 class="forecard-title">Current Day Forecast</h5>
-                            <p class="forecard-text">Temp:</p>
-                            <p class="forecard-text">Wind:</p>
-                            <p class="forecard-text">Humidity:</p>
-                        </div>
-                    <div class="forecard">Day 3</div>
-                        <div class="forecard-body">
-                            <h5 class="forecard-title">Current Day Forecast</h5>
-                            <p class="forecard-text">Temp:</p>
-                            <p class="forecard-text">Wind:</p>
-                            <p class="forecard-text">Humidity:</p>
-                        </div>
-                    <div class="forecard">Day 4</div>
-                        <div class="forecard-body">
-                            <h5 class="forecard-title">Current Day Forecast</h5>
-                            <p class="forecard-text">Temp:</p>
-                            <p class="forecard-text">Wind:</p>
-                            <p class="forecard-text">Humidity:</p>
-                        </div>
-                    <div class="forecard">Day 5</div>
-                        <div class="forecard-body">
-                            <h5 class="forecard-title">Current Day Forecast</h5>
-                            <p class="forecard-text">Temp:</p>
-                            <p class="forecard-text">Wind:</p>
-                            <p class="forecard-text">Humidity:</p>
-                        </div>
+            </div>
+            <h6 id="forecast-title">5 day Forecast</h6>
+            <div class="row">
+                <div id="forecard" class="col-md-2">
+                        <h5 id="forecard-title">Day 1 Forecast</h5>
+                        <p id="forecard-text">Temp:</p>
+                        <p id="forecard-text">Wind:</p>
+                        <p id="forecard-text">Humidity:</p>
+                </div>
+                <div id="forecard" class="col-md-2">
+                        <h5 id="forecard-title">Day 2 Forecast</h5>
+                        <p id="forecard-text">Temp:</p>
+                        <p id="forecard-text">Wind:</p>
+                        <p id="forecard-text">Humidity:</p>
+                </div>
+                <div id="forecard" class="col-md-2">
+                        <h5 id="forecard-title">Day 3 Forecast</h5>
+                        <p id="forecard-text">Temp:</p>
+                        <p id="forecard-text">Wind:</p>
+                        <p id="forecard-text">Humidity:</p>
+                </div>
+                <div id="forecard" class="col-md-2">
+                        <h5 id="forecard-title">Day 4 Forecast</h5>
+                        <p id="forecard-text">Temp:</p>
+                        <p id="forecard-text">Wind:</p>
+                        <p id="forecard-text">Humidity:</p>
+                </div>
+                <div id="forecard" class="col-md-2">
+                        <h5 id="forecard-title">Day 5 Forecast</h5>
+                        <p id="forecard-text">Temp:</p>
+                        <p id="forecard-text">Wind:</p>
+                        <p id="forecard-text">Humidity:</p>
                 </div>
             </div>
         </div>
