@@ -11,6 +11,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Weather Dashboard</title>
   </head>
 
@@ -22,15 +28,17 @@
         <div class="row">
             <div id="sidesearch" class="col-md-3">
                 <h4 id="searchtitle">Search for a City:</h4>
-                <form>
-                <input id="citysearchtext" class="citysearchtext" type="text"><br><br>
-                <input type="submit" value="Search"><br><hr>
-                </form>
+                <input id="citySearchText" class="citysearchtextcl" type="text"><br><br>
+                <button id="createButton">Search</button><hr>
+                <p id="history">
+                    <!-- Add dynamic button creation with each search -->
+                </p>
             </div>
         <div id="weatherboxes" class="col-md-9">
             <div class="row">
                 <div id="maincard-body" class="col-md-9">
-                    <h5 id="currentCity"></h5><h5 id="currentDay"></h5>
+                    <p id="currentCity"></p> 
+                    <p id="currentDay"></p>
                     <p id="maincard-text" class="temp">Temp:</p>
                     <p id="maincard-text" class="wind">Wind:</p>
                     <p id="maincard-text" class="humid">Humidity:</p>
@@ -39,35 +47,35 @@
             <h6 id="forecast-title">5 day Forecast</h6>
             <div class="row">
                 <div id="forecard" class="col-md-2">
-                        <h5 id="nextDay1"></h5>
+                        <p id="nextDay1"></p>
                         <img id="icon1" /><br>
                         <p id="temp1">Temp:</p>
                         <p id="wind1">Wind:</p>
                         <p id="humid1">Humidity:</p>
                 </div>
                 <div id="forecard" class="col-md-2">
-                        <h5 id="nextDay2"></h5>
+                        <p id="nextDay2"></p>
                         <img id="icon2" /><br>
                         <p id="temp2">Temp:</p>
                         <p id="wind2">Wind:</p>
                         <p id="humid2">Humidity:</p>
                 </div>
                 <div id="forecard" class="col-md-2">
-                        <h5 id="nextDay3"></h5>
+                        <p id="nextDay3"></p>
                         <img id="icon3" /><br>
                         <p id="temp3">Temp:</p>
                         <p id="wind3">Wind:</p>
                         <p id="humid3">Humidity:</p>
                 </div>
                 <div id="forecard" class="col-md-2">
-                        <h5 id="nextDay4"></h5>
+                        <p id="nextDay4"></p>
                         <img id="icon4" /><br>
                         <p id="temp4">Temp:</p>
                         <p id="wind4">Wind:</p>
                         <p id="humid4">Humidity:</p>
                 </div>
                 <div id="forecard" class="col-md-2">
-                        <h5 id="nextDay5"></h5>
+                        <p id="nextDay5"></p>
                         <img id="icon5" /><br>
                         <p id="temp5">Temp:</p>
                         <p id="wind5">Wind:</p>
@@ -76,12 +84,6 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous"></script>
-
     <script src="./script.js"></script>
   </body>
 </html>

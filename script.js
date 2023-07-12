@@ -1,10 +1,8 @@
-var currentDayEl = $('#currentDay');
-var nextDayEl1 = $('#nextDay1');
-var nextDayEl2 = $('#nextDay2');
-var nextDayEl3 = $('#nextDay3');
-var nextDayEl4 = $('#nextDay4');
-var nextDayEl5 = $('#nextDay5');
+var citySearchEl = $('#citySearchText');
+var currentCityEl = $('#currentCity');
 var responseMain = document.getElementById('') //add IDs for each response area on HTML and iterate
+var buttons = [];
+$(document).ready(function() {
 
 // fetch('https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}')
 //   .then(function (response) {
@@ -19,22 +17,68 @@ var responseMain = document.getElementById('') //add IDs for each response area 
 // Previously searched cities should list (new row) and be clickable
 // For this reason searches need to save to localStorage
 // use Geocoding API for city level names http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
-// use dayJS to pull current date and 5 day forecast dates
 // create click event for form submit
 
+// Populates today's date and dates of 5 day forecast
 function displayDate() {
-    var today = dayjs().format('M/DD/YYYY');
-    currentDayEl.text(today);
+    var today = dayjs();
+    $('#currentDay').text(today.format('M/DD/YYYY'));
     var day1 = dayjs().add(1, 'day').format('M/DD/YYYY');
-    nextDayEl1.text(day1);
+    $('#nextDay1').text(day1);
     var day2 = dayjs().add(2, 'day').format('M/DD/YYYY');
-    nextDayEl2.text(day2);
+    ('#nextDay2').text(day2);
     var day3 = dayjs().add(3, 'day').format('M/DD/YYYY');
-    nextDayEl3.text(day3);
+    $('#nextDay3').text(day3);
     var day4 = dayjs().add(4, 'day').format('M/DD/YYYY');
-    nextDayEl4.text(day4);
+    $('#nextDay4').text(day4);
     var day5 = dayjs().add(5, 'day').format('M/DD/YYYY');
-    nextDayEl5.text(day5);
+    $('#nextDay5').text(day5);
 }
 
+var handleFormSubmit = function (event) {
+    event.preventDefault();
+
+    var cityInput = citySearchEl.val();
+    cityInput.text = currentCityEl;
+    // Add dynamic button creation with each search with btn functionality to be searched
+    var cityButton = document.createElement('button');
+    cityButton.textContent = cityInput;
+
+    //Reloads input text
+    cityButton.addEventListener('click', function() {
+        document.getElementById('citySearchText').value = cityInput;
+    });
+
+    //Saves buttons to array
+    buttons.push(cityInput);
+    saveButtonsToLocalStorage();
+
+    document.getElementById('buttonContainer').appendChild(button);
+    
+}
+
+function loadButtonsFromLocalStorage() {
+    var savedButtons = localStorage.getItem('buttons');
+
+    if (savedButtons) {
+        buttons = JSON.parse(savedButtons);
+        buttons.forEach(function(buttonText) {
+            var button = document.createElement('button');
+            button.textContent = buttonText;
+            button.addEventListener('click', function() {
+                document.getElementById('cityInput').value = buttonText;
+            });
+            document.getElementById('buttonContainer').appendChild(button);
+        });
+    }
+}
+
+function saveButtonsToLocalStorage (){
+    localStorage.setItem('buttons', JSON.stringify(buttons));
+}
+
+document.getElementById('createButton').addEventListener('click', createButton);
+
 displayDate();
+loadButtonsFromLocalStorage();
+});
