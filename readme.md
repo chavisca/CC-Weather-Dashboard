@@ -26,4 +26,4 @@ This was created using the MIT License for educational purposes only.
 https://chavisca.github.io/CC-Weather-Dashboard
 
 ## Screenshot
-![Screenshot of the Weather Dashboard](/assets/images/screenshot.jpg?raw=true)
+![Screenshot of the Weather Dashboard](./assets/images/screenshot.jpg?raw=true)
