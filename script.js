@@ -38,6 +38,7 @@ function loadButtonsFromLocalStorage() {
         buttons.forEach(function(buttonText) {
             var button = document.createElement('button');
             button.textContent = buttonText;
+            button.classList.add('history-button');
             button.addEventListener('click', function() {
                 var buttonText = this.textContent;
                 getApi(buttonText);
@@ -79,7 +80,9 @@ function getApi(cityInput) {
         var currentTempKelvin = data.list[0].main.temp;
         var currentTempFahrenheit = ((currentTempKelvin - 273.15) * 9 / 5 + 32).toFixed(2);
         document.getElementById("maincard-temp").textContent = "Temp: " + currentTempFahrenheit + "°F";
-        document.getElementById("maincard-wind").textContent = "Wind: " + data.list[0].wind.speed + " m/s";
+        var currentWindMS = data.list[0].wind.speed;
+        var currentWindMPH = ((currentWindMS) * 2.23694).toFixed(2);
+        document.getElementById("maincard-wind").textContent = "Wind: " + currentWindMPH + " MPH";
         document.getElementById("maincard-humid").textContent = "Humidity: " + data.list[0].main.humidity + "%";
 
 for (var i = 0; i < 5; i++) {
@@ -89,7 +92,9 @@ for (var i = 0; i < 5; i++) {
     var forecastTempKelvin = data.list[i].main.temp;
     var forecastTempFahrenheit = ((forecastTempKelvin - 273.15) * 9 / 5 + 32).toFixed(2);
     document.getElementById("temp" + forecastIndex).textContent = "Temp: " + forecastTempFahrenheit + "°F";
-    document.getElementById("wind" + forecastIndex).textContent = "Wind: " + data.list[i].wind.speed + " m/s";
+    var forecastWindMS = data.list[i].wind.speed;
+    var forecastWindMPH = ((forecastWindMS) * 2.23694).toFixed(2);
+    document.getElementById("wind" + forecastIndex).textContent = "Wind: " + forecastWindMPH + " MPH";
     document.getElementById("humid" + forecastIndex).textContent = "Humidity: " + data.list[i].main.humidity + "%";
 
         }

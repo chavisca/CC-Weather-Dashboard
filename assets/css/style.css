@@ -1,3 +1,35 @@
+body {
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(46,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+}
+
+h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#citySearchText {
+    width: 100%;
+}
+
+#searchButton {
+    width: 100%;
+}
+
+.history-button {
+    background-color: darkgrey;
+    text-align: center;
+    border-radius: 5%;
+    width: 100%;
+}
+
 #maincard-body {
     border: 5px;
     border-style: solid;
@@ -15,11 +47,13 @@
 
 h3 {
     font-weight: bold;
+    text-align: center;
 }
 
 .carddate {
     color: white;
     font-weight: bold;
+    font-size: 20px;
 }
 .cardtext {
     color: white;
