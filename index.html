@@ -11,11 +11,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <script
-    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous"
-  ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Weather Dashboard</title>
   </head>
@@ -28,8 +23,16 @@
         <div class="row">
             <div id="sidesearch" class="col-md-3">
                 <h4 id="searchtitle">Search for a City:</h4>
-                <input id="citySearchText" class="citysearchtextcl" type="text"><br><br>
-                <button id="searchButton">Search</button><hr>
+                <form>
+                  <div class="cityformgroup">
+                    <input id="citySearchText" class="citysearchtextcl" type="text" placeholder="Enter a City"><br>
+                  </div>
+                  <br>
+                  <div class=""submitformgroup">
+                    <button id="searchButton" type="submit" class="btn btn-primary">Search</button>
+                  </div>
+                </form>
+                <hr>
                 <div id="history">
                 </div>
             </div>
@@ -38,9 +41,10 @@
                 <div id="maincard-body" class="col-md-9">
                     <p id="currentCity"></p> 
                     <p id="currentDay"></p>
-                    <p id="maincard-text" class="temp">Temp:</p>
-                    <p id="maincard-text" class="wind">Wind:</p>
-                    <p id="maincard-text" class="humid">Humidity:</p>
+                    <img id="mainIcon" /><br>
+                    <p id="maincard-temp" class="temp">Temp:</p>
+                    <p id="maincard-wind" class="wind">Wind:</p>
+                    <p id="maincard-humid" class="humid">Humidity:</p>
                 </div>
             </div>
             <h6 id="forecast-title">5 day Forecast</h6>
