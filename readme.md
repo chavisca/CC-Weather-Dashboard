@@ -4,6 +4,7 @@
 
 This project is meant to demonstrate the capabilities of using server-side APIs to borrow and utilize data.  
 This project should create a web app titled Weather Dashboard that has a sideboard for city searches and a main section showing the current day data and a 5 day future forecast below.
+This project was a great help in demonstrating iterations on fetch requests and dynamically populating elements with the data.
 
 ## Credits
 
@@ -26,4 +27,5 @@ This was created using the MIT License for educational purposes only.
 https://chavisca.github.io/CC-Weather-Dashboard
 
 ## Screenshot
-![Screenshot of the Weather Dashboard](/assets/images/screenshot.jpg)
+
+![Screenshot_of_the_Weather_Dashboard](/assets/images/screenshot.jpg)
