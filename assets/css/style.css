@@ -1,0 +1,32 @@
+#maincard-body {
+    border: 5px;
+    border-style: solid;
+}
+
+.bigcardhead {
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.bigcardtext {
+    color: black;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.carddate {
+    color: white;
+    font-weight: bold;
+}
+.cardtext {
+    color: white;
+}
+
+#forecard {
+    background-color: slategray;
+    padding: 2%;
+    
+}

@@ -18,71 +18,77 @@
   <body>
     <header class="p-5 mb-4">
       <h1 class="display-3 text-center">Weather Dashboard</h1>
+      <!-- Add gradient from left to right background color and style text -->
     </header>
     <div class="container-fluid">
         <div class="row">
             <div id="sidesearch" class="col-md-3">
                 <h4 id="searchtitle">Search for a City:</h4>
+                <!-- Search for a city to be bolded and larger -->
                 <form>
                   <div class="cityformgroup">
                     <input id="citySearchText" class="citysearchtextcl" type="text" placeholder="Enter a City"><br>
                   </div>
                   <br>
-                  <div class=""submitformgroup">
+                  <div class="submitformgroup">
                     <button id="searchButton" type="submit" class="btn btn-primary">Search</button>
                   </div>
                 </form>
+                <!-- buttons need to span container along with textinput -->
                 <hr>
                 <div id="history">
                 </div>
             </div>
         <div id="weatherboxes" class="col-md-9">
             <div class="row">
-                <div id="maincard-body" class="col-md-9">
-                    <p id="currentCity"></p> 
-                    <p id="currentDay"></p>
+                <div id="maincard-body" class="col-md-9 mx-auto">
+                    <span id="currentCity" class="bigcardhead"></span> 
+                    <span id="currentDay" class="bigcardhead"></span>
                     <img id="mainIcon" /><br>
-                    <p id="maincard-temp" class="temp">Temp:</p>
-                    <p id="maincard-wind" class="wind">Wind:</p>
-                    <p id="maincard-humid" class="humid">Humidity:</p>
+                    <p id="maincard-temp" class="bigcardtext">Temp:</p>
+                    <p id="maincard-wind" class="bigcardtext">Wind:</p>
+                    <p id="maincard-humid" class="bigcardtext">Humidity:</p>
                 </div>
             </div>
-            <h6 id="forecast-title">5 day Forecast</h6>
+            <!-- Border needs to be added and bigcardtext scaled in size and bolded -->
+            <h3 id="forecast-title">5 day Forecast:</h3>
             <div class="row">
-                <div id="forecard" class="col-md-2">
-                        <p id="nextDay1"></p>
+                <div id="forecard" class="col-md-2 mx-auto">
+                        <p id="nextDay1" class="carddate"></p>
                         <img id="icon1" /><br>
-                        <p id="temp1">Temp:</p>
-                        <p id="wind1">Wind:</p>
-                        <p id="humid1">Humidity:</p>
+                        <p id="temp1" class="cardtext">Temp:</p>
+                        <p id="wind1" class="cardtext">Wind:</p>
+                        <p id="humid1" class="cardtext">Humidity:</p>
                 </div>
-                <div id="forecard" class="col-md-2">
-                        <p id="nextDay2"></p>
+                <!-- spacing between cards to separate them -->
+                <!-- card text to be changed to white and carddate bolded -->
+                <div id="forecard" class="col-md-2 mx-auto">
+                        <p id="nextDay2" class="carddate"></p>
                         <img id="icon2" /><br>
-                        <p id="temp2">Temp:</p>
-                        <p id="wind2">Wind:</p>
-                        <p id="humid2">Humidity:</p>
+                        <p id="temp2" class="cardtext">Temp:</p>
+                        <p id="wind2" class="cardtext">Wind:</p>
+                        <p id="humid2" class="cardtext">Humidity:</p>
                 </div>
-                <div id="forecard" class="col-md-2">
-                        <p id="nextDay3"></p>
+                <div id="forecard" class="col-md-2 mx-auto">
+                        <p id="nextDay3" class="carddate"></p>
                         <img id="icon3" /><br>
-                        <p id="temp3">Temp:</p>
-                        <p id="wind3">Wind:</p>
-                        <p id="humid3">Humidity:</p>
+                        <p id="temp3" class="cardtext">Temp:</p>
+                        <p id="wind3" class="cardtext">Wind:</p>
+                        <p id="humid3" class="cardtext">Humidity:</p>
                 </div>
-                <div id="forecard" class="col-md-2">
-                        <p id="nextDay4"></p>
+                <div id="forecard" class="col-md-2 mx-auto">
+                        <p id="nextDay4" class="carddate"></p>
                         <img id="icon4" /><br>
-                        <p id="temp4">Temp:</p>
-                        <p id="wind4">Wind:</p>
-                        <p id="humid4">Humidity:</p>
+                        <p id="temp4" class="cardtext">Temp:</p>
+                        <p id="wind4" class="cardtext">Wind:</p>
+                        <p id="humid4" class="cardtext">Humidity:</p>
                 </div>
-                <div id="forecard" class="col-md-2">
-                        <p id="nextDay5"></p>
+                <div id="forecard" class="col-md-2 mx-auto">
+                        <p id="nextDay5" class="carddate"></p>
                         <img id="icon5" /><br>
-                        <p id="temp5">Temp:</p>
-                        <p id="wind5">Wind:</p>
-                        <p id="humid5">Humidity:</p>
+                        <p id="temp5" class="cardtext">Temp:</p>
+                        <p id="wind5" class="cardtext">Wind:</p>
+                        <p id="humid5" class="cardtext">Humidity:</p>
                 </div>
             </div>
         </div>
