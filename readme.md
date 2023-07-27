@@ -28,4 +28,4 @@ https://chavisca.github.io/CC-Weather-Dashboard
 
 ## Screenshot
 
-![Screenshot_of_the_Weather_Dashboard](/assets/images/screenshot.jpg)
+![Screenshot_of_the_Weather_Dashboard](./assets/images/screenshot.jpg)
