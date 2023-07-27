@@ -76,7 +76,7 @@ function getApi(cityInput) {
       .then(function (data) {
         document.getElementById("currentCity").textContent = data.city.name;
         document.getElementById("currentDay").textContent = new Date(data.list[0].dt * 1000).toLocaleDateString();
-        document.getElementById("mainIcon").setAttribute("src", "http://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png");
+        document.getElementById("mainIcon").setAttribute("src", "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png");
         var currentTempKelvin = data.list[0].main.temp;
         var currentTempFahrenheit = ((currentTempKelvin - 273.15) * 9 / 5 + 32).toFixed(2);
         document.getElementById("maincard-temp").textContent = "Temp: " + currentTempFahrenheit + "°F";
@@ -91,7 +91,7 @@ for (var i = 1; i <= 5; i++) {
 
     if(data.list[dataIndex]) {
       document.getElementById("nextDay" + forecastIndex).textContent = new Date(data.list[dataIndex].dt * 1000).toLocaleDateString();
-      document.getElementById("icon" + forecastIndex).setAttribute("src", "http://openweathermap.org/img/w/" + data.list[dataIndex].weather[0].icon + ".png");
+      document.getElementById("icon" + forecastIndex).setAttribute("src", "https://openweathermap.org/img/w/" + data.list[dataIndex].weather[0].icon + ".png");
       var forecastTempKelvin = data.list[dataIndex].main.temp;
       var forecastTempFahrenheit = ((forecastTempKelvin - 273.15) * 9 / 5 + 32).toFixed(2);
       document.getElementById("temp" + forecastIndex).textContent = "Temp: " + forecastTempFahrenheit + "°F";
