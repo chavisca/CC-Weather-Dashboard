@@ -55,7 +55,7 @@ function saveButtonsToLocalStorage (){
 };
 
 function getApi(cityInput) {
-    var requestURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&limit=1&appid=38a14f455e291460489082db93502bea`;
+    var requestURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&limit=1&appid=38a14f455e291460489082db93502bea`;
 
     fetch(requestURL)
       .then(function (response) {
@@ -85,18 +85,30 @@ function getApi(cityInput) {
         document.getElementById("maincard-wind").textContent = "Wind: " + currentWindMPH + " MPH";
         document.getElementById("maincard-humid").textContent = "Humidity: " + data.list[0].main.humidity + "%";
 
-for (var i = 0; i < 5; i++) {
-    var forecastIndex = i + 1;
-    document.getElementById("nextDay" + forecastIndex).textContent = new Date(data.list[i].dt * 1000).toLocaleDateString();
-    document.getElementById("icon" + forecastIndex).setAttribute("src", "http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
-    var forecastTempKelvin = data.list[i].main.temp;
-    var forecastTempFahrenheit = ((forecastTempKelvin - 273.15) * 9 / 5 + 32).toFixed(2);
-    document.getElementById("temp" + forecastIndex).textContent = "Temp: " + forecastTempFahrenheit + "°F";
-    var forecastWindMS = data.list[i].wind.speed;
-    var forecastWindMPH = ((forecastWindMS) * 2.23694).toFixed(2);
-    document.getElementById("wind" + forecastIndex).textContent = "Wind: " + forecastWindMPH + " MPH";
-    document.getElementById("humid" + forecastIndex).textContent = "Humidity: " + data.list[i].main.humidity + "%";
+for (var i = 1; i <= 5; i++) {
+    var forecastIndex = i;
+    var dataIndex = i * 8;
 
+    if(data.list[dataIndex]) {
+      document.getElementById("nextDay" + forecastIndex).textContent = new Date(data.list[dataIndex].dt * 1000).toLocaleDateString();
+      document.getElementById("icon" + forecastIndex).setAttribute("src", "http://openweathermap.org/img/w/" + data.list[dataIndex].weather[0].icon + ".png");
+      var forecastTempKelvin = data.list[dataIndex].main.temp;
+      var forecastTempFahrenheit = ((forecastTempKelvin - 273.15) * 9 / 5 + 32).toFixed(2);
+      document.getElementById("temp" + forecastIndex).textContent = "Temp: " + forecastTempFahrenheit + "°F";
+      var forecastWindMS = data.list[dataIndex].wind.speed;
+      var forecastWindMPH = ((forecastWindMS) * 2.23694).toFixed(2);
+      document.getElementById("wind" + forecastIndex).textContent = "Wind: " + forecastWindMPH + " MPH";
+      document.getElementById("humid" + forecastIndex).textContent = "Humidity: " + data.list[dataIndex].main.humidity + "%";
+    
+    } else {
+    
+      document.getElementById("nextDay" + forecastIndex).textContent = "Data Not Available";
+        document.getElementById("icon" + forecastIndex).setAttribute("src", "");
+        document.getElementById("temp" + forecastIndex).textContent = "Temp: N/A";
+        document.getElementById("wind" + forecastIndex).textContent = "Wind: N/A";
+        document.getElementById("humid" + forecastIndex).textContent = "Humidity: N/A";
+
+    }
         }
       });
 };
